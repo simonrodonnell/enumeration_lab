@@ -30,8 +30,7 @@ class StarSystem
 
   def get_planets_with_more_moons(amount)
     planets_with_more_moons_array = @planets.find_all { |planet| planet.number_of_moons > amount }
-    planet_names = planets_with_more_moons_array.map {|planet| planet.name}
-    return planet_names
+    return planets_with_more_moons_array.map {|planet| planet.name}
   end
 
   def get_number_of_planets_closer_than(amount)
