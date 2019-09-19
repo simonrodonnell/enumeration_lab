@@ -42,4 +42,14 @@ class StarSystem
     return @planets.reduce(0) { |sum_of_planet_moons, planet| sum_of_planet_moons + planet.number_of_moons }
   end
 
+  def get_planet_names_sorted_by_increasing_distance_from_sun
+    planets_sorted_array = @planets.sort { |planet_a, planet_b| planet_a.distance_from_sun <=> planet_b.distance_from_sun}
+    return planet_names = planets_sorted_array.map { |planet| planet.name }
+  end
+
+  def get_planet_names_sorted_by_size_decreasing
+    planets_sorted_array = @planets.sort { |planet_a, planet_b| planet_b.diameter <=> planet_a.diameter}
+    return planet_names = planets_sorted_array.map { |planet| planet.name }
+  end
+
 end
